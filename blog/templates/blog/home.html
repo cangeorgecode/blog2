@@ -1,0 +1,18 @@
+{% extends 'blog/base.html' %}
+{% block content %}
+<div class="container p-5">
+    {% for blog in blogs %}
+    <div class="row">
+        <div class="col-lg p-1">
+          <div class="card">
+            <div class="card-body">
+              <a href="{% url 'readblog' blog.id %}"><h5 class="card-title">{{ blog }}</h5></a>
+              <p class="card-text">Last updated: {{ blog.date_updated }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+{% endfor %}
+</div>
+
+{% endblock content %}
